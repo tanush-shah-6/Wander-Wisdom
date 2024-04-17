@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+  
+*{
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+}
+
+.logo{
+    font-size: 3rem !important;
+    font-family: "Lobster", sans-serif;
+}
+
+.main{
+    background: url(../images/img1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    height: 80vh;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.input-group{
+    width: 90%;
+    max-width: 500px;
+    border-radius: 30px;
+    background: #fff;
+    margin: auto;
+    padding: 2px;
+}
+
+.form-control{
+    border: 0 !important;
+    border-radius: 30px !important;
+    margin: 2px;
+    box-shadow: none !important;
+}
+
+.input-group-text{
+    width: 100px;
+    height: 35px;
+    background-image: linear-gradient(#00ff80, #0044ff);
+    border: 0 !important;
+    border-radius: 30px !important;
+    padding: 0 25px !important;
+    font-weight: 700 !important;
+    margin: 2px;
+    box-shadow: none;
+}
+
+.preferences{
+    border-radius: 30px;
+    box-shadow:  0 0 20px 4px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.or{
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.or h3{
+    margin: 30px;
+}
+
+.or > button{
+    background: none;
+    border: none;
+    font-size: normal;
+    color: white;
+    padding: 5px 25px;
+    background-image: linear-gradient(#00ff80, #0044ff);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.preferences > label{
+    margin-left: 20px;
+}
+
+select{
+    background: none;
+    color: white;
+}
+
+input[type=range] {
+    appearance: none;
+    height: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+input[type=range]:hover {
+    opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: limegreen;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.footer{
+    background-color: gainsboro;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
