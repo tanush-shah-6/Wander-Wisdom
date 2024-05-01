@@ -38,6 +38,26 @@
     box-shadow: none !important;
 }
 
+#searchResults {
+    list-style-type: none;
+    padding: 0;  
+    margin: auto !important;
+    width: 500px;
+    /* border-radius: 10px; */
+
+}
+
+#searchResults li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#searchResults li:hover {   
+    background-color: #f1f1f1;
+}
+  
 .input-group-text{
     width: 100px;
     height: 35px;
@@ -86,10 +106,10 @@
     margin-left: 20px;
 }
 
-select{
+/* select{
     background: none;
     color: white;
-}
+} */
 
 input[type=range] {
     appearance: none;
