@@ -49,10 +49,23 @@ h2{
 }
 
 .reviews{
-    background-color: rgba(146, 52, 148, 0.136);
+    display: flex;
+}
+
+.showreviews{
+    background-color: rgba(146, 52, 148, 0.2);
     border-radius: 30px;
     margin: 10px;
     padding: 20px;
     width: 50%;
     float: left;
+}
+
+.writereview{
+    background-color: rgba(21, 152, 252, 0.2);
+    border-radius: 30px;
+    margin: 10px;
+    padding: 20px;
+    width: 50%;
+    height: 400px;
 }
