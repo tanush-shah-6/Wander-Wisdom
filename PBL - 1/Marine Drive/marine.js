@@ -36,14 +36,16 @@ function parseCsv(csv) {
 function displayReviews(reviews) {
     const reviewsContainer = document.getElementById('reviews');
     
-    // Iterate over reviews and create HTML elements
-    reviews.forEach(review => {
+    // Iterate over the first 10 reviews and create HTML elements
+    for (let i = 0; i < Math.min(reviews.length, 10); i++) {
+        const review = reviews[i];
         const reviewElement = document.createElement('div');
         reviewElement.innerHTML = `
             <p>${review.review}</p>
             <hr>
         `;
         reviewsContainer.appendChild(reviewElement);
-    });
+    }
 }
+
 

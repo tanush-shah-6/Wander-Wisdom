@@ -10,9 +10,12 @@
     font-size: 3rem !important;
     font-family: "Lobster", sans-serif;
 }
+
 .main{
     background-color: rgba(0, 255, 136, 0.2);
     display: flex;
+    border-radius: 30px;
+    margin: 10px;
 }
 
 h2{
@@ -25,7 +28,7 @@ h2{
     border-radius: 30px;
     margin: 20px;
     float: left;
-   object-fit: cover;
+    object-fit: cover;
 }
 
 .content{
@@ -42,4 +45,11 @@ h2{
     text-align: center;
     padding: 20px;
     display: block;
+}
+
+.reviews{
+    background-color: rgba(146, 52, 148, 0.136);
+    border-radius: 30px;
+    margin: 10px;
+    padding: 20px;
 }
