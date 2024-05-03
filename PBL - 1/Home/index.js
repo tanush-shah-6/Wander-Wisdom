@@ -21,7 +21,7 @@ priceRange.oninput = function() {
 }
 
 
-var places = ["Gateway of India", "Juhu", "Raigad Fort", "Shirdi", "Sinhagad Fort"];
+var places = ["Gateway of India", "Juhu", "Raigad Fort", "Shirdi", "Sinhagad Fort", "Marine Drive"];
 $("#searchResults").removeClass("p-2");
   
 $(".form-control").on("input", function() {
