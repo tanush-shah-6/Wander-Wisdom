@@ -22,7 +22,7 @@ priceRange.oninput = function() {
 
 
 var places = ["Amruteshwar", "Bhimashankar", "Gateway of India", "Lonavala", "Juhu", "Raigad Fort", "Shirdi", 
-"Sinhagad Fort", "Marine Drive", "Ajanta Caves", "Ganapatipule", "Trimbakeshwar", "Haji Ali Dargah"];
+"Sinhagad Fort", "Marine Drive", "Ajanta Caves", "Ganapatipule", "Naneghat", "Trimbakeshwar", "Haji Ali Dargah"];
 $("#searchResults").removeClass("p-2");
   
 $(".form-control").on("input", function() {
