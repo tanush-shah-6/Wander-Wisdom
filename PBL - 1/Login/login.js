@@ -35,7 +35,7 @@ app.post("/sign_up", (req, res) => {
         "firstname": firstname,
         "lastname": lastname,
         "email": email,
-        "password": password,
+        "password": password
     };
 
     db.collection('user').insertOne(data, (err, collection) => {
@@ -44,7 +44,6 @@ app.post("/sign_up", (req, res) => {
             return res.status(500).send("Error inserting record");
         }
         console.log("Record inserted successfully");
-        let 
         return res.redirect('./login.html');
     });
 });
@@ -53,7 +52,7 @@ app.get("/", (req, res) => {
     res.set({
         "Allow-access-Allow-Origin": '*'
     });
-    return res.redirect('index.html');
+    return res.redirect('./login.html');
 }).listen(4000);
 
 app.get("/login", (req,res)=>{
@@ -68,7 +67,7 @@ app.post("/login", async(req,res)=>{
         const useremail = await db.collection('user').findOne({email:email});
 
         if(useremail.password=== password){
-            res.status(201).redirect("./home.html");
+            res.status(201).redirect("../../Home/index.html");
         }else{
             res.send("Invalid login details");
         }
