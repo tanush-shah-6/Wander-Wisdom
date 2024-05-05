@@ -100,3 +100,29 @@ document.getElementById("searchButton").addEventListener("click", function() {
         console.error('Error:', error);
     });
 });
+
+const token = localStorage.getItem('token');
+
+if(token)
+{
+    $("#loginbutton").text("Logout");
+    $("#loginbutton").click(function()
+{
+    var confirmation = confirm('Are you sure you want to logout?');
+    if (confirmation) {
+        localStorage.removeItem("token");
+        alert("Logout successful!");
+        window.location.href = "./login.html";
+    }
+    else{
+        window.location.href = "./index.html";
+    }
+});
+}
+else{
+    $("#preferencesbutton").click(function()
+    {
+        alert("Login to apply filters!");
+        window.location.href = "./login.html";
+    });
+}
