@@ -1,0 +1,72 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(../images/background.jpg);
+
+    background-size: cover;
+    background-position: center;
+
+}
+
+.sign-up-form{
+    width: 350px;
+    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 30px;
+    margin: 8px auto 0;
+    text-align: center;
+}
+#firstname{
+    border-radius: 10px;
+    padding: 5px;
+    width: calc(50% - 5px); /* Adjust as needed */
+    margin: 5px 2.5px; /* Adjust as needed */
+    border: 1px solid #999;
+    outline: none;
+   
+}
+#lastname{
+    border-radius: 10px;
+    padding: 5px;
+    width: calc(50% - 5px); /* Adjust as needed */
+    margin: 5px 2.5px; /* Adjust as needed */
+    border: 1px solid #999;
+    outline: none;
+   
+}
+#email{
+    border-radius: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+    text-align: left;
+}
+#password{
+    border-radius: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+}
+.sign-up-form h1{
+    color: rgb(11, 11, 122);
+
+}
+#submit{
+    color: #fff;
+    background-color: rgb(41, 54, 228);
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+img{
+    width: 100px;
+    margin-top: -50px;
+}

@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.getElementById('password');
 
     // Add event listener for the click event on the login button
-    loginButton.addEventListener('click', async function () {
+    loginButton.addEventListener('click', async function (event) {
+        event.preventDefault();
         const email = emailInput.value;
         const password = passwordInput.value;
 
