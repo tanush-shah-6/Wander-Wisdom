@@ -21,9 +21,8 @@ priceRange.oninput = function() {
 }
 
 
-var places = ["Amruteshwar", "Bhimashankar", "Gateway of India", "Lonavala", "Juhu", "Raigad Fort", "Shirdi", 
-"Sinhagad Fort", "Marine Drive", "Ajanta Caves", "Ganapatipule", "Sanjay Gandhi NP",
- "Naneghat", "Trimbakeshwar", "Haji Ali Dargah"];
+var places = ["Amruteshwar", "Gateway of India", "Della Adventure Park", "Juhu", "Shirdi", 
+"Sinhagad Fort", "Marine Drive", "Ellora Caves", "Imagica", "Trimbakeshwar"];
 $("#searchResults").removeClass("p-2");
   
 $(".form-control").on("input", function() {

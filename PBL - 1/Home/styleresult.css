@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.logo{
+    font-size: 3rem !important;
+    font-family: "Lobster", sans-serif;
+}
+
+.header {
+    background-color: #f8f9fa;
+}
+
+.container {
+max-width: 1140px;
+margin: 0 auto;
+}
+
+.nav {
+padding-left: 0;
+}
+
+.nav-link {
+color: #198754;
+}
+
+.logo {
+font-size: 1.5rem;
+}
+
+.main {
+padding: 20px;
+background-color: rgba(146, 52, 148, 0.2);
+margin: 20px;
+border-radius: 30px;
+}
+
+#placesList {
+list-style-type: none;
+}
+
+#placesList li {
+margin-bottom: 10px;
+padding: 10px;
+border: 1px solid #ced4da;
+border-radius: 5px;
+background-color: #fff;
+}
+
+button {
+cursor: pointer;
+padding: 8px 16px;
+margin-top: 20px !important;
+border: none;
+border-radius: 10px !important; 
+background-color: #0d6efd;
+color: #fff;
+}
+
+button:hover {
+background-color: #0b5ed7;
+}

@@ -28,7 +28,7 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
   var email = req.body.email;
@@ -36,6 +36,16 @@ app.post("/signup", (req, res) => {
 
   if (!validateEmail(email)) {
       return res.status(400).send("Invalid email format");
+  }
+
+  try {
+    const existingUser = await db.collection('users').findOne({ email: email });
+    if (existingUser) {
+        return res.status(409).send("Email already exists");
+    }
+  } catch (error) {
+      console.error("Error checking existing email:", error);
+      return res.status(500).send("Error checking existing email");
   }
 
   var data = {

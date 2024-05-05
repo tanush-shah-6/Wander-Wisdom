@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Store the token securely (e.g., in local storage)
             localStorage.setItem('token', "user");
-
+            alert("Login Successful!");
             window.location.href = './index.html';
 
         } else {
             // Handle invalid login credentials
-            alert('Invalid email or password');
+            alert('Invalid email or password!');
+            window.location.href = './login.html';
         }
     });
 

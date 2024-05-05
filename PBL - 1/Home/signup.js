@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (response.ok) {
                 // Redirect to login.html if signup is successful
+                alert("Signup successful!");
                 window.location.href = './login.html';
             } else {
                 // Display an error message if signup fails

@@ -5,36 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ordered Places</title>
+  <link rel="stylesheet" href="./styleresult.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>List of Ordered Places</h1>
+  <section class="header">
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          </div>
+  
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="./index.html" class="nav-link px-2 logo">Wander Wisdom</a></li>
+          </ul>
+  
+          <div class="col-md-3 text-end">
+          </div>
+      </header>
+    </div>
+</section>
+
+<section class="main">
+  <h3>Filter Results</h3>
   <ul id="placesList"></ul>
+</section>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Extract search results from the URL query parameter
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const results = JSON.parse(urlParams.get('results'));
 
-    // Process the fetched data and display it on the page
-    const placesList = document.getElementById('placesList');
-    if (results && results.length > 0) {
-      results.forEach(place => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${place.name} - ${place.location} - ${place.duration} days - Rs. ${place.budget}`;
-        placesList.appendChild(listItem);
-      });
-    } else {
-      // If no results are found, display a message
-      const message = document.createElement('p');
-      message.textContent = 'No places found.';
-      placesList.appendChild(message);
-    }
-  });
-</script>
 
+<script src="result.js"></script>
 </body>
 
 </html>
