@@ -60,7 +60,7 @@ $(document).on('click', '#searchResults li', function() {
 });
   
     
-$(".input-group-text").click(function()
+$(".directSearch").click(function()
 {
     var destination = $(".form-control").val();
     destinationLength = destination.length;
@@ -76,4 +76,27 @@ $(".preferences").hide();
 $(".or button").click(function()
 {
     $(".preferences").slideToggle();
+});
+
+
+document.getElementById("searchButton").addEventListener("click", function() {
+    // Gather filter values
+    var purpose = document.getElementById("purposeFilter").value;
+    var location = document.getElementById("locationFilter").value;
+    var duration = document.getElementById("durationRange").value;
+    var budget = document.getElementById("priceRange").value;
+
+    // Send request to backend with filter parameters
+    fetch(`http://localhost:8800/api/places?purpose=${purpose}&location=${location}&duration=${duration}&budget=${budget}`)
+    .then(response => response.json())
+    .then(data => {
+        // Redirect to result.html and pass the search results as a query parameter
+        const queryString = new URLSearchParams({ results: JSON.stringify(data) }).toString();
+        const redirectUrl = `./result.html?${queryString}`;
+        console.log("Redirecting to:", redirectUrl);
+        window.location.href = redirectUrl;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });

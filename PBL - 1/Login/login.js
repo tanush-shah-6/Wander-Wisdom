@@ -21,7 +21,7 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 
-app.post("/sign_up", (req, res) => {
+app.post("/signup", (req, res) => {
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
     var email = req.body.email;
@@ -59,23 +59,48 @@ app.get("/login", (req,res)=>{
     res.render("login");
 })
 
-app.post("/login", async(req,res)=>{
-    try{
-        const email = req.body.email;
-        const password = req.body.password;
+app.post("/login", async (req, res) => {
+    try {
+        // Extract email and password from the request body
+        const { email, password } = req.body;
 
-        const useremail = await db.collection('user').findOne({email:email});
-
-        if(useremail.password=== password){
-            res.status(201).redirect("../../Home/index.html");
-        }else{
-            res.send("Invalid login details");
+        // Check if email and password are provided
+        if (!email || !password) {
+            throw new Error("Email and password are required.");
         }
 
-    } catch (error){
-        res.status(400).send("Invalid login details")
+        // Check database connection
+        if (db.readyState !== 1) {
+            throw new Error("Database connection failed.");
+        }
+
+        // Attempt to find the user in the database
+        let user;
+        try {
+            user = await db.collection('user').findOne({ email: email, password: password });
+        } catch (error) {
+            console.error("Error finding user:", error);
+            throw new Error("Internal server error");
+        }
+
+        // If user is not found, return 401 Unauthorized
+        if (!user) {
+            return res.status(401).send("Invalid email or password");
+        }
+
+        // If user is found, generate a token (implement this function)
+        const token = generateToken(user);
+
+        // Send the token in the response
+        res.status(200).json({ token: token });
+    } catch (error) {
+        // Handle any caught errors
+        console.error("Login error:", error);
+        res.status(500).send(error.message || "Internal server error");
     }
-})
+});
+
+
 
 
 console.log("Listening on port 4000");
