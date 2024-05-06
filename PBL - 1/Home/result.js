@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const listItem = document.createElement('li');
         listItem.innerHTML = `Location: ${place.location} <br> Purpose: ${place.purpose} <br>
-        Duration: ${place.duration} days <br> Price per day: Rs. ${place.budget}`;
+        Duration: ${place.duration} days <br> Total Budget: Rs. ${place.budget}`;
         placesList.appendChild(listButton);
         placesList.appendChild(listItem);
       });

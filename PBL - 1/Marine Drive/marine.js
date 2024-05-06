@@ -3,7 +3,7 @@ $(".content").slideDown(1000);
 
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch the CSV file
-    fetch('../Reviews/reviews1.csv')
+    fetch('../Reviews/Marine.csv')
         .then(response => response.text())
         .then(csv => {
             // Parse CSV data
