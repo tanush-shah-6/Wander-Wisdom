@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
 
-    // Add event listener for the click event on the login button
     loginButton.addEventListener('click', async function (event) {
         event.preventDefault();
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        // Make a POST request to the login API
         const response = await fetch('http://localhost:8800/login', {
             method: 'POST',
             headers: {
@@ -23,14 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (response.ok) {
             
-
-            // Store the token securely (e.g., in local storage)
             localStorage.setItem('token', "user");
             alert("Login Successful!");
             window.location.href = './index.html';
 
         } else {
-            // Handle invalid login credentials
             alert('Invalid email or password!');
             window.location.href = './login.html';
         }

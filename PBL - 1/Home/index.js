@@ -1,21 +1,18 @@
-// JavaScript to display the selected value of the range slider
+
 var durationValue = document.getElementById("durationValue");
 var durationRange = document.getElementById("durationRange");
 
-durationValue.innerHTML = durationRange.value; // Display the default slider value
+durationValue.innerHTML = durationRange.value; 
     
-// Update the current slider value (each time you drag the slider handle)
 durationRange.oninput = function() {
     durationValue.innerHTML = this.value;
 }
 
-// JavaScript to display the selected value of the range slider
 var priceValue = document.getElementById("priceValue");
 var priceRange = document.getElementById("priceRange");
 
-priceValue.innerHTML = priceRange.value; // Display the default slider value
+priceValue.innerHTML = priceRange.value; 
 
-// Update the current slider value (each time you drag the slider handle)
 priceRange.oninput = function() {
     priceValue.innerHTML = this.value;
 }
@@ -79,17 +76,15 @@ $(".or button").click(function()
 
 
 document.getElementById("searchButton").addEventListener("click", function() {
-    // Gather filter values
+
     var purpose = document.getElementById("purposeFilter").value;
     var location = document.getElementById("locationFilter").value;
     var duration = document.getElementById("durationRange").value;
     var budget = document.getElementById("priceRange").value;
 
-    // Send request to backend with filter parameters
     fetch(`http://localhost:8800/api/places?purpose=${purpose}&location=${location}&duration=${duration}&budget=${budget}`)
     .then(response => response.json())
     .then(data => {
-        // Redirect to result.html and pass the search results as a query parameter
         const queryString = new URLSearchParams({ results: JSON.stringify(data) }).toString();
         const redirectUrl = `./result.html?${queryString}`;
         console.log("Redirecting to:", redirectUrl);
