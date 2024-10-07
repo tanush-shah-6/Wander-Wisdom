@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Extract search results from the URL query parameter
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const results = JSON.parse(urlParams.get('results'));
 
-    // Process the fetched data and display it on the page
     const placesList = document.getElementById('placesList');
     if (results && results.length > 0) {
       results.forEach(place => {
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         placesList.appendChild(listItem);
       });
     } else {
-      // If no results are found, display a message
       const message = document.createElement('p');
       message.textContent = 'No places found.';
       placesList.appendChild(message);
